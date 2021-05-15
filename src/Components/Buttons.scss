@@ -1,0 +1,169 @@
+.btns {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    position: relative;
+
+    :last-child {
+      margin-left: 2rem;
+      text-align: center;
+      width: auto;
+    }
+}
+
+// .custom-btn {
+//     width: 130px;
+//     height: 40px;
+//     color: #fff;
+//     border-radius: 5px;
+//     padding: 10px 25px;
+//     font-family: 'Lato', sans-serif;
+//     font-weight: 500;
+//     background: transparent;
+//     cursor: pointer;
+//     transition: all 0.3s ease;
+//     position: relative;
+//     display: inline-block;
+//      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+//      7px 7px 20px 0px rgba(0,0,0,.1),
+//      4px 4px 5px 0px rgba(0,0,0,.1);
+//     outline: none;
+//   }
+  
+//   /* 1 */
+//   .btn-1 {
+//     background: rgb(6,14,131);
+//     background: linear-gradient(0deg, rgb(63, 1, 99) 0%, rgba(12,25,180,1) 100%);
+//     border: none;
+//   }
+//   .btn-1:hover {
+//      background: rgb(0,3,255);
+//   background: linear-gradient(0deg, rgb(63, 1, 99) 0%, rgba(2,126,251,1) 100%);
+//   }
+
+//   .btn-1:active{
+//     box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+//                 -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+//       inset -4px -4px 6px 0 rgba(255,255,255,.2),
+//       inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+//   }
+
+//   /* 11 */
+// .btn-11 {
+//     border: none;
+//     background: rgb(251,33,117);
+//       background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+//       color: #fff;
+//       overflow: hidden;
+//   }
+//   .btn-11:hover {
+//       text-decoration: none;
+//       color: #fff;
+//   }
+//   .btn-11:before {
+//       position: absolute;
+//       content: '';
+//       display: inline-block;
+//       top: -180px;
+//       left: 0;
+//       width: 30px;
+//       height: 100%;
+//       background-color: #fff;
+//       animation: shiny-btn1 3s ease-in-out infinite;
+//   }
+//   .btn-11:hover{
+//     opacity: .7;
+//   }
+//   .btn-11:active{
+//     box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+//                 -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+//       inset -4px -4px 6px 0 rgba(255,255,255,.2),
+//       inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+//   }
+  
+  
+//   @keyframes shiny-btn1 {
+//       0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+//       80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+//       81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+//       100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+//   }
+
+  ////////////NEW
+
+  
+// Animate the size, inside
+button {
+  border-radius: 10px;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+//FillBUtton
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+  .fill:active{
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+  }
+
+// Size can also be negative; see how it's smaller than the element
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.raise:active {
+  transform: translateY(.25em);
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+//=== Set button colors
+// If you wonder why use Sass vars or CSS custom properties...
+  // Make a map with the class names and matching colors
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: #ffa260, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
