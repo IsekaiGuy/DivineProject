@@ -5,11 +5,11 @@ import voodoo from "../images/Voodoo.png";
 import divine from "../images/Divine1.png";
 
 const bg = {
-    green: love,
-    red: astrology,
-    brown: divine,
-    blue: curse,
-    black: voodoo
+    love: love,
+    astrology: astrology,
+    divine: divine,
+    curse: curse,
+    voodoo: voodoo
   };
 
   export default bg;

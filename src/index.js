@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./Components/App";
 import reportWebVitals from './reportWebVitals';
-import ParallaxComponent from "./Components/ParallaxBG";
+import ParallaxBG from "./Components/ParallaxBG";
 import "./main.scss";
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <ParallaxComponent />
+    <ParallaxBG />
   </React.StrictMode>,
   document.getElementById('root')
 );

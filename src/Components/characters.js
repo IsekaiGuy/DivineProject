@@ -4,44 +4,42 @@ import astrology from "../images/Astrology2.png";
 import love from "../images/Love2.png";
 import divine from "../images/Divine2.png";
 import voodoo from "../images/Smoke.gif";
-// import voodoo from "../images/Voodoo.png";
 
 const characters = [
     {
       url: astrology,
-      bgUrl: bg.red,
+      bgUrl: bg.astrology,
       name: "Astrology",
-      description: "Corpus Man",
-      id: "CORPUS_MAN"
+      description: "Astrology",
+      id: "ASTROLOGY"
     },
     {
       url: curse,
-      bgUrl: bg.blue,
+      bgUrl: bg.curse,
       name: "Curse",
-      description: "Corpus Man",
-      id: "CORPUS_MOA"
+      description: "Curse",
+      id: "CURSE"
     },
     {
       url: love,
-      bgUrl: bg.green,
+      bgUrl: bg.love,
       name: "Love",
-      description: "Corpus Man",
-      id: "INFESTED"
+      description: "Love",
+      id: "LOVE"
     },
     {
       url: divine,
-      bgUrl: bg.brown,
+      bgUrl: bg.divine,
       name: "Divine",
-      description: "Corpus Man",
-      rarity: "RARE",
-      id: "ARCHWING_UNITS"
+      description: "Divine",
+      id: "DIVINE"
     },
     {
       url: voodoo,
-      bgUrl: bg.black,
+      bgUrl: bg.voodoo,
       name: "Voodoo",
-      description: "Corpus Man",
-      id: "CORPUS_WALKER"
+      description: "Voodoo",
+      id: "VOODOO"
     },
     {
       // url: "https://i.ibb.co/92v820W/Corpus-Osprey.png",
