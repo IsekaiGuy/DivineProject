@@ -1,7 +1,7 @@
 // @import "./Components/layout";
 
 * {
-  color: #FFF;
+  // color: #FFF;
   font-family: "Playfair Display";
 }
 
@@ -16,4 +16,10 @@ html {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   max-height: 800px;
+}
+
+.heading1,
+.heading2,
+.heading3 {
+  color: #FFF;
 }

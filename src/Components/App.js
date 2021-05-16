@@ -3,6 +3,7 @@ import Header from "./Header";
 import Card from "./Card";
 import {FillBtn, RaiseBtn} from "./Buttons";
 import BecomeMaster from "./BecomeMaster";
+import Faq from "./Faq";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <BecomeMaster />
       </section>
       <section className="section__faq">
+        <Faq />
       </section>
     </>
   );
