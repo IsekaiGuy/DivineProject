@@ -8,14 +8,14 @@ const Footer = () => {
         <div className="footer__row-1">
             <div className="footer__column">
                 <div className="container__about">
-                    <h6>About</h6>
+                    <h5 className="heading5">About</h5>
                     <p className="container__about__text">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
                 </div>
             </div>
 
             <div className="footer__column">
                 <div className="container__categories">
-                    <h6>Categories</h6>
+                    <h5 className="heading5">Categories</h5>
                     <ul className="container__categories__links">
                         <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
                         <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
@@ -29,7 +29,7 @@ const Footer = () => {
 
             <div className="footer__column">
                 <div className="container__quick-links">
-                    <h6>Quick Links</h6>
+                    <h5 className="heading5">Quick Links</h5>
                     <ul className="container__quick-links__list">
                         <li><a href="http://scanfcode.com/about/">About Us</a></li>
                         <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
@@ -39,24 +39,23 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-
         </div>
 
         <div className="footer__row-2">
             <div className="container__copyright">
                 <p className="copyright">Copyright &copy; 2021 All Rights Reserved by
                 <a href="./">Scanfcode</a>.
-            </p>
+                </p>
             </div>
 
             <div className="container__social-icons">
                 <ul className="container__social-icons__list">
-                    <li><a className="facebook" href="#"><img src={facebook} alt="facebook"/></a></li>
-                    <li><a className="twitter" href="#"><img src={twitter} alt="twitter"/></a></li>
+                    <li><img src={facebook} alt="facebook" className="facebook"/></li>
+                    <li><img src={twitter} alt="twitter" className="twitter"/></li>
                 </ul>
             </div>
-
         </div>
+
     </footer>)
 }
 
