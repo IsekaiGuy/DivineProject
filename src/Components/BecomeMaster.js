@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Buttons from "./Buttons";
 import "./BecomeMaster.scss";
 
@@ -8,16 +10,56 @@ const Heading2 = () => {
     </div>)
 };
 
-const textArray = ["Example1", "Example3", "Example3", "Example4"];
 
 const BecomeMaster = () => {
+    const leftAnimation = useAnimation();
+    const rightAnimation = useAnimation();
+    const {ref, inView} = useInView({
+        threshold: 0.7
+    });    
+    
+    useEffect(() => {
+        inView ? leftAnimation.start({
+            x: 0,
+            transition: {
+                type: "spring",
+                duration: 2
+            } 
+        }) : leftAnimation.start({x: -100})
+        
+        inView ? rightAnimation.start({
+            x: 0,
+            transition: {
+                type: "spring",
+                duration: 2
+            } 
+        }) : rightAnimation.start({x: 100})
+
+    }, [inView]);
+
     return (<>
-            <div className="master__section">
-                <Heading2 />
-                {textArray.map((text, index) => (<p className={`master__section__text master__section__text-block${index}`} key={index}>{text}</p>))}
-                <Buttons />
-            </div>
-            </>)
+        <div className="master__section">
+            <Heading2 />
+            
+            <motion.div animate={leftAnimation} className={`master__section__text-block1`}>
+                    <p ref={ref} className={`master__section__text `}>Example1</p>
+            </motion.div>
+
+            <motion.div animate={rightAnimation} className={`master__section__text-block2`}>
+                    <p ref={ref} className={`master__section__text `}>Example2</p>
+            </motion.div>
+
+            <motion.div animate={leftAnimation} className={`master__section__text-block3`}>
+                    <p ref={ref} className={`master__section__text `}>Example3</p>
+            </motion.div>
+
+            <motion.div animate={rightAnimation} className={`master__section__text-block4`}>
+                    <p ref={ref} className={`master__section__text `}>Example4</p>
+            </motion.div>
+            
+            <Buttons value1="Read FAQ" value2="Master's registration" />
+        </div>
+    </>)
 }
 
 export default BecomeMaster;

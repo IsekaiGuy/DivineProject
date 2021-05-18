@@ -1,7 +1,6 @@
 // @import "./Components/layout";
 
 * {
-  // color: #FFF;
   font-family: "Playfair Display";
 }
 
@@ -15,11 +14,18 @@ html {
   font-size: 1rem;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
-  max-height: 800px;
 }
 
 .heading1,
 .heading2,
 .heading3 {
   color: #FFF;
+}
+
+.section__cards {
+  padding-bottom: 8rem;
+}
+
+.section__become-master {
+  padding-bottom: 8rem;
 }

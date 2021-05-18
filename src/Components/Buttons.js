@@ -10,12 +10,12 @@ import "./Buttons.scss";
 
 // const SignUpBtn = () => (<button className="custom-btn btn-1">Sign up</button>)
 
-export const FillBtn = () => (<button className="fill">Sign up</button>);
-export const RaiseBtn = () => (<button className="raise">Become a Master</button>);
+export const FillBtn = (props) => (<button className="fill">{props.value1}</button>); 
+export const RaiseBtn = (props) => (<button className="raise">{props.value2}</button>); 
 
-const Buttons = () => (<div className="btns">
-          <FillBtn />
-          <RaiseBtn />
+const Buttons = (props) => (<div className="btns">
+          <FillBtn value1={props.value1}/>
+          <RaiseBtn value2={props.value2}/>
         </div>)
 
 export default Buttons;

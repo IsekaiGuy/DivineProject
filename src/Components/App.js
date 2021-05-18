@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Card from "./Card";
 import Buttons from "./Buttons";
+import TopMasters from "./TopMasters";
 import BecomeMaster from "./BecomeMaster";
 import Faq from "./Faq";
 import Footer from "./Footer";
@@ -18,8 +19,12 @@ const App = () => {
           <Card character="CURSE" />
           <Card character="VOODOO" />
         </div>
-        <Buttons />
+        <Buttons value1="Sign up" value2="Become a Master"/>
       </section>
+
+      {/* <section className="section__top-masters">
+        <TopMasters />
+      </section> */}
 
       <section className="section__become-master">
         <BecomeMaster />
