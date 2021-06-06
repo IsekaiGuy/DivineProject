@@ -28,10 +28,10 @@
 
     &__text {
         
-        padding: .5rem 4rem;
+        padding: .5rem 1rem;
         width: fit-content;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: whitesmoke;
         text-shadow: 1px 1px 2px purple;
         position: relative;
@@ -39,7 +39,7 @@
         z-index: 90;
 
         &-block1 {
-            grid-column: 3 / auto;
+            grid-column: 6 / 10;
             grid-row: 2 / span 3;
             animation: gradient 10s ease infinite;
 
@@ -47,8 +47,8 @@
         }
 
         &-block2 {
-            grid-column: 8 / auto;
-            grid-row: 3 / span 3;
+            grid-column: 2 / 6;
+            grid-row: 4 / span 3;
             animation: gradient 11s ease infinite;
             animation-delay: .5s;
 
@@ -56,8 +56,8 @@
         }
 
         &-block3 {
-            grid-column: 3 / auto;
-            grid-row: 6 / span 3;
+            grid-column: 6 / 10;
+            grid-row: 7 / span 3;
             animation: gradient 12s ease infinite;
             animation-delay: 1s;
 

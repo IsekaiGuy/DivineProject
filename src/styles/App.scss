@@ -1,0 +1,51 @@
+@import "./BecomeMaster";
+@import "./Buttons";
+@import "./Card";
+@import "./Faq";
+@import "./Footer";
+@import "./Header";
+@import "./ParallaxBG";
+@import "./TopMasters";
+
+* {
+  font-family: "Playfair Display";
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  font-family: "Raleway";
+  font-size: 1rem;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: linear-gradient(135deg, #261342 0%, black 40%, #0c031a 80%);
+  background-attachment: fixed;
+  overflow: hidden;
+  margin: 0;
+}
+
+.heading1,
+.heading2,
+.heading3 {
+  color: #fff;
+}
+
+// .section__cards {
+//   padding-bottom: 8rem;
+//   height: 100vh;
+// }
+
+// .section__become-master {
+//   padding-bottom: 8rem;
+//   height: 100vh;
+// }
+
+// .section__faq {
+//   height: 100vh;
+// }

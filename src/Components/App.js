@@ -6,6 +6,8 @@ import TopMasters from "./TopMasters";
 import BecomeMaster from "./BecomeMaster";
 import Faq from "./Faq";
 import Footer from "./Footer";
+//Style
+import "../styles/App.scss";
 
 const App = () => {
   return (
@@ -19,7 +21,7 @@ const App = () => {
           <Card character="CURSE" />
           <Card character="VOODOO" />
         </div>
-        <Buttons value1="Sign up" value2="Become a Master"/>
+        <Buttons value1="Sign up" value2="Become a Master" />
       </section>
 
       {/* <section className="section__top-masters">
@@ -29,13 +31,13 @@ const App = () => {
       <section className="section__become-master">
         <BecomeMaster />
       </section>
-      
+
       <section className="section__faq">
         <Faq />
       </section>
       <Footer />
     </>
   );
-}
+};
 
 export default App;
