@@ -29,7 +29,7 @@ const Faq = () => {
     <div className="faq__section">
       <Heading3 />
       <div className="faqs-container">
-        <div className="faq active">
+        <div className="faq">
           <h4 className="faq-title">Why shouldn't we trust atoms?</h4>
           <p className="faq-text">They make up everything.</p>
           <FaqButton />

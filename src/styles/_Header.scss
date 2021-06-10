@@ -3,12 +3,15 @@
   justify-content: space-between;
   align-items: center;
   margin: 1.15rem 0 0 0;
-  padding: 2rem 6rem 6rem 6rem;
+  padding: 2rem 9rem 6rem 9rem;
   color: white;
 
   &__logo {
     height: 5rem;
     width: 5rem;
+    z-index: 2000;
+    display: block;
+    position: relative;
   }
 
   &__title {

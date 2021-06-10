@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/Background.png";
+import logo from "../images/Back-logo-5-4-6.png";
 
 const Header = () => {
   return (
@@ -15,9 +15,7 @@ const Header = () => {
       </div>
 
       <div className="header__logo__container">
-        <a href="./">
-          <img src={logo} alt="logo" className="header__logo" />
-        </a>
+        <img src={logo} alt="logo" className="header__logo" />
       </div>
     </header>
   );

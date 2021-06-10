@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Components/App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ParallaxBG from "./Components/ParallaxBG";
+import ParallaxBG from "./components/ParallaxBG";
 
 ReactDOM.render(
   <React.StrictMode>
