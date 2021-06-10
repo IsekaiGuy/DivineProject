@@ -26,14 +26,16 @@ const characters = [
     url: love,
     bgUrl: bg.love,
     name: "Love",
-    description: "Masters with the gift to bind people's hearts with love",
+    description:
+      "Masters with the gift which allows them to bind people's hearts with love",
     id: "LOVE",
   },
   {
     url: divine,
     bgUrl: bg.divine,
-    name: "Divine",
-    description: "Masters with the gift of seeing the human's future",
+    name: "Divination",
+    description:
+      "Masters with the gift which allows them to see into the human's future",
     id: "DIVINE",
   },
   {
@@ -41,7 +43,7 @@ const characters = [
     bgUrl: bg.voodoo,
     name: "Voodoo",
     description:
-      "Shamans, voodoo masters, masters able to communicate with the spirits of the dead",
+      "Shamans, Voodoo and Masters able to communicate with the spirits of the dead",
     id: "VOODOO",
   },
   // {

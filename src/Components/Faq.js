@@ -1,70 +1,141 @@
 import React from "react";
+import arrow from "../images/down-arrow.svg";
 
-const Heading3 = () => (
-  <div className="heading3-container">
-    <h3 className="heading3">Frequently Asked Questions</h3>
-  </div>
-);
+const parentNodeToggler = (e) => {
+  e.target.parentNode.classList.toggle("active");
+};
 
-const FaqButton = () => {
+const Faq = ({ children }) => {
   return (
-    <button
+    <div
+      className="faq"
       onClick={(e) => {
-        if (e.target.classList.contains("fas")) {
-          e.target.parentNode.parentNode.classList.toggle("active");
-        } else {
-          e.target.parentNode.classList.toggle("active");
-        }
+        e.target.classList.toggle("active");
       }}
-      className="faq-toggle"
     >
-      <i className="fas fa-chevron-down"></i>
-      <i className="fas fa-times"></i>
-    </button>
+      {children}
+    </div>
   );
 };
 
-const Faq = () => {
+const FaqsContainer = () => {
   return (
     <div className="faq__section">
-      <Heading3 />
+      <div className="heading3-container">
+        <h3 className="heading3">Frequently Asked Questions</h3>
+      </div>
+
       <div className="faqs-container">
-        <div className="faq">
-          <h4 className="faq-title">Why shouldn't we trust atoms?</h4>
-          <p className="faq-text">They make up everything.</p>
-          <FaqButton />
-        </div>
-        <div className="faq">
-          <h4 className="faq-title">
+        <Faq>
+          <h4
+            className="faq-title"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            Why shouldn't we trust atoms?
+          </h4>
+          <p
+            className="faq-text"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            They make up everything.
+          </p>
+          <img
+            src={arrow}
+            alt="arrow"
+            className="arrow"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          />
+        </Faq>
+
+        <Faq>
+          <h4
+            className="faq-title"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
             What do you call someone with no body and no nose?
           </h4>
-          <p className="faq-text">Nobody knows.</p>
-          <FaqButton />
-        </div>
-        <div className="faq">
-          <h4 className="faq-title">
+          <p
+            className="faq-text"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            Nobody knows.
+          </p>
+          <img
+            src={arrow}
+            alt="arrow"
+            className="arrow"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          />
+        </Faq>
+
+        <Faq>
+          <h4
+            className="faq-title"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
             What's the object-oriented way to become wealthy?
           </h4>
-          <p className="faq-text">Inheritance.</p>
-          <FaqButton />
-        </div>
-        {/* {/* <div className="faq">
-		<h4 className="faq-title">
-			How many tickles does it take to tickle an octopus?
-		</h4>
-		<p className="faq-text">
-			Ten-tickles!
-		</p>
-		<FaqButton />
-	</div> */}
-        <div className="faq">
-          <h4 className="faq-title">What is: 1 + 1?</h4>
-          <p className="faq-text">Depends on who are you asking.</p>
-          <FaqButton />
-        </div>{" "}
+          <p
+            className="faq-text"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            Inheritance.
+          </p>
+          <img
+            src={arrow}
+            alt="arrow"
+            className="arrow"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          />
+        </Faq>
+
+        <Faq>
+          <h4
+            className="faq-title"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            What is: 1 + 1?
+          </h4>
+          <p
+            className="faq-text"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          >
+            Depends on who are you asking.
+          </p>
+          <img
+            src={arrow}
+            alt="arrow"
+            className="arrow"
+            onClick={(e) => {
+              parentNodeToggler(e);
+            }}
+          />
+        </Faq>
       </div>
     </div>
   );
 };
 
-export default Faq;
+export default FaqsContainer;
