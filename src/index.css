@@ -1,0 +1,23 @@
+* {
+  font-family: "Mate SC", serif;
+}
+
+html {
+  width: 100%;
+  font-family: "Mate SC", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", serif;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
