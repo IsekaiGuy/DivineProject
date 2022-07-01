@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useRef, useState} from "react";
+import React, {memo, useCallback, useEffect, useRef, useState} from "react";
 import characters from "./characters";
 import './Card.scss';
 
@@ -22,49 +22,43 @@ const Card = (props: ICard) => {
     setState({ ...state, height, width })
   }, []);
 
-  let mousePX = () => {
+  let mousePX = useCallback(() => {
     const { mouseX, width } = state;
     return mouseX / width;
-  }
+  }, [state]);
 
-  let mousePY = () => {
+  let mousePY = useCallback(() => {
     const { mouseY, height } = state;
     return mouseY / height;
-  }
+  }, [state]);
 
-  const cardStyle = () => {
+  const cardStyle = useCallback(() => {
     const rX = mousePX() * 30;
     const rY = mousePY() * -30;
     return {
       transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
     };
-  }
+  }, [mousePX, mousePY]);
 
-  if(!character) {
-    return <div/>;
-  }
-
-  const characterStyle = () => {
+  const characterStyle = useCallback(() => {
     const tX = mousePX() * -60;
     const tY = mousePY() * -60;
     return {
-      backgroundImage: `url(${character.url})`,
       transform: `translateX(${tX}px) translateY(${tY}px)`,
     };
-  }
+  }, [character, mousePX, mousePY]);
 
-  const backgroundStyle = () => {
+  const backgroundStyle = useCallback(() => {
     const tX = mousePX() * -30;
     const tY = mousePY() * -30;
     return {
-      backgroundImage: `url(${character.bgUrl})`,
       transform: `translateX(${tX}px) translateY(${tY}px)`,
     };
-  }
+  }, [character, mousePX, mousePY])
 
   let mouseEnterHandler = () => {};
 
-  let mouseMoveHandler = (e: any) => {
+  let mouseMoveHandler = useCallback((e: any) => {
     const { width, height } = state;
     const mouseX = e.pageX - ref.current.offsetLeft - width / 2;
     const mouseY = e.pageY - ref.current.offsetTop - height / 2;
@@ -74,9 +68,12 @@ const Card = (props: ICard) => {
       mouseX,
       mouseY,
     });
-  };
+  }, [state])
 
   let mouseLeaveHandler = () => {};
+
+  const {transform: charStyle} = characterStyle();
+  const {transform: bgStyle} = backgroundStyle();
 
   return (
       <div
@@ -91,19 +88,24 @@ const Card = (props: ICard) => {
             style={cardStyle()}
         >
           <div className="card-content">
-            <div className="pattern-bg" />
             <div
                 className="parallax-bg"
-                style={backgroundStyle()}
+                style={{
+                  transform: bgStyle,
+                  backgroundImage: `url(${character && character.bgUrl})`
+                }}
             />
             <div
                 className="character-bg parallax-bg"
-                style={characterStyle()}
+                style={{
+                  transform: charStyle,
+                  backgroundImage: `url(${character && character.url})`
+                }}
             />
 
             <div className="card-detail">
-              <h3>{character.name}</h3>
-              <p>{character.description}</p>
+              <h4>{character && character.name}</h4>
+              <p>{character && character.description}</p>
             </div>
           </div>
         </div>

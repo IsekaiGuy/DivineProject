@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const CardList = () => {
   return (
-    <div className="container">
+    <div className="card-list">
       <Card character="ASTROLOGY" />
       <Card character="DIVINE" />
       <Card character="LOVE" />
