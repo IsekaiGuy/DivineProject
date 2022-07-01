@@ -3,6 +3,8 @@ import SectionCards from "./components/CardsSection/SectionCards";
 import BecomeMaster from "./components/BecomeMaster/BecomeMaster";
 import FaqsContainer from "./components/Faq/Faq";
 import Footer from "./components/Footer/Footer";
+import Nav from './components/Nav/Nav';
+
 import Image from './images/BackgroundImage.png';
 
 import './App.scss';
@@ -21,7 +23,10 @@ function App() {
                       </div>)
                   })}
                   <div className="App__container-inner">
-                      <SectionCards/>
+                      <section className='main-screen'>
+                          <Nav />
+                          <SectionCards/>
+                      </section>
                       <BecomeMaster />
                       <FaqsContainer />
                   </div>
