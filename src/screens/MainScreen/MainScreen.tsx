@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from '../../components/Nav/Nav';
-import Card from "../../components/CardsSection/Card";
+import Card from "../../components/Card/Card";
 import Buttons from "../../components/Buttons/Buttons";
 // @ts-ignore
 import bemClassName from 'bem-classnames-maker';
@@ -10,7 +10,7 @@ import './MainScreen.scss';
 const MainScreen = () => {
     const bem = bemClassName('MainScreen')
     return (
-        <section>
+        <section className={bem()}>
             <Nav />
             <div className={bem('card-list')}>
                 <Card character="ASTROLOGY" />

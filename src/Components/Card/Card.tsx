@@ -1,5 +1,8 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from "react";
 import characters from "./characters";
+// @ts-ignore
+import bemClassName from 'bem-classnames-maker';
+
 import './Card.scss';
 
 interface ICard {
@@ -7,6 +10,7 @@ interface ICard {
 }
 
 const Card = (props: ICard) => {
+  const bem = bemClassName('Card')
   const [state, setState] = useState({
     width: 0,
     height: 0,
@@ -77,7 +81,7 @@ const Card = (props: ICard) => {
 
   return (
       <div
-          className="card-wrapper"
+          className={bem()}
           ref={ref}
           onMouseEnter={mouseEnterHandler}
           onMouseMove={mouseMoveHandler}
