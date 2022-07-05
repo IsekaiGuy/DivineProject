@@ -7,7 +7,7 @@ import './Nav.scss';
 
 const Nav = () => {
     const bem = bemClassName('Nav')
-    return (<nav className={bem('navbar')}>
+    return (<nav className={bem()}>
         <img src={image} alt="logo"/>
         <p>Sign In</p>
     </nav>)

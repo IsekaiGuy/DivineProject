@@ -1,13 +1,8 @@
 .Nav {
-  &__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10% 0 10%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
 
     img {
       width: 70px;
@@ -20,5 +15,4 @@
       font-size: 24px;
       color: white;
     }
-  }
 }
