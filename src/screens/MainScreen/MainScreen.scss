@@ -1,0 +1,12 @@
+.MainScreen {
+  height: 100vh;
+
+  &__card-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation: MoveUpDown 10s linear infinite;
+    z-index: 2;
+  }
+}

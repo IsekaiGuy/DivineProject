@@ -1,5 +1,7 @@
-.faq {
-  color: white;
+.Faq {
+  &__container {
+    color: white;
+  }
 
   &__heading-container {
     text-align: center;
@@ -20,3 +22,5 @@
     margin-bottom: 20px;
   }
 }
+
+

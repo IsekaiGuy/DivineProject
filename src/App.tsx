@@ -1,9 +1,8 @@
 import React from 'react';
-import SectionCards from "./components/CardsSection/SectionCards";
 import BecomeMaster from "./components/BecomeMaster/BecomeMaster";
 import FaqsContainer from "./components/Faq/Faq";
 import Footer from "./components/Footer/Footer";
-import Nav from './components/Nav/Nav';
+import MainScreen from "./screens/MainScreen/MainScreen";
 
 import Image from './images/BackgroundImage.png';
 
@@ -12,7 +11,7 @@ import './App.scss';
 function App() {
     const array = Array.from(Array(100).keys());
       return (
-          <div className='App'>
+          <main className='App'>
               <div className='App__container'>
                   {array.map((item, index) => {
                       return (<div
@@ -23,17 +22,14 @@ function App() {
                       </div>)
                   })}
                   <div className="App__container-inner">
-                      <section className='main-screen'>
-                          <Nav />
-                          <SectionCards/>
-                      </section>
+                      <MainScreen />
                       <BecomeMaster />
                       <FaqsContainer />
                   </div>
                   <Footer />
               </div>
               <img src={Image} alt="" className='bg'/>
-          </div>
+          </main>
       );
 }
 

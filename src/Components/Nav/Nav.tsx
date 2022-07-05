@@ -1,10 +1,13 @@
 import React from "react";
 import image from '../../images/Logo.png';
+// @ts-ignore
+import bemClassName from 'bem-classnames-maker';
 
 import './Nav.scss';
 
 const Nav = () => {
-    return (<nav className='navbar'>
+    const bem = bemClassName('Nav')
+    return (<nav className={bem('navbar')}>
         <img src={image} alt="logo"/>
         <p>Sign In</p>
     </nav>)
