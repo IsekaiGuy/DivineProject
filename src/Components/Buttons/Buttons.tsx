@@ -1,18 +1,27 @@
 import React from "react";
 import './Buttons.scss';
 
-export const FillBtn = (props: any) => (
-  <button className="fill">{props.value1}</button>
+export interface IButton {
+    value: string
+}
+
+export const FillBtn = ({value}: IButton) => (
+  <button className="fill">{value}</button>
 );
-export const RaiseBtn = (props: any) => (
-  <button className="raise">{props.value2}</button>
+export const RaiseBtn = ({value}: IButton) => (
+  <button className="raise">{value}</button>
 );
 
-const Buttons = (props: any) => (
-  <div className="btns">
-    <FillBtn value1={props.value1} />
-    <RaiseBtn value2={props.value2} />
-  </div>
-);
+interface IButtons {
+    className: string,
+    value1: string,
+    value2: string
+}
 
+const Buttons = (props: IButtons) => (
+    <div className={`buttons ${props.className}`}>
+        <FillBtn value={props.value1}/>
+        <RaiseBtn value={props.value2}/>
+    </div>
+)
 export default Buttons;

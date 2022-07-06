@@ -12,4 +12,8 @@
     animation: MoveUpDown 10s linear infinite;
     z-index: 2;
   }
+
+  &__buttons {
+    margin-bottom: 30px;
+  }
 }

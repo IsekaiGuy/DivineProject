@@ -19,7 +19,11 @@ const MainScreen = () => {
                 <Card character="CURSE" />
                 <Card character="VOODOO" />
             </div>
-            <Buttons value1="Sign up" value2="Become a Master" />
+            <Buttons
+                className={bem('buttons')}
+                value1="Sign up"
+                value2="Become a Master"
+            />
         </section>
     )
 }

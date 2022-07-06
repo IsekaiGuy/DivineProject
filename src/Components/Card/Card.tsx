@@ -37,7 +37,6 @@ const Card = (props: ICard) => {
   }, [state]);
 
   const cardStyle = useCallback(() => {
-    console.log(mousePX())
     const rX = mousePX() * 30;
     const rY = mousePY() * -30;
     let timer = rX !== 0 ? 0 : 3;
