@@ -37,10 +37,14 @@ const Card = (props: ICard) => {
   }, [state]);
 
   const cardStyle = useCallback(() => {
+    console.log(mousePX())
     const rX = mousePX() * 30;
     const rY = mousePY() * -30;
+    let timer = rX !== 0 ? 0 : 3;
+
     return {
       transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
+      transition: `all ${timer}s`
     };
   }, [mousePX, mousePY]);
 
@@ -60,8 +64,6 @@ const Card = (props: ICard) => {
     };
   }, [character, mousePX, mousePY])
 
-  let mouseEnterHandler = () => {};
-
   let mouseMoveHandler = useCallback((e: any) => {
     const { width, height } = state;
     const mouseX = e.pageX - ref.current.offsetLeft - width / 2;
@@ -74,46 +76,51 @@ const Card = (props: ICard) => {
     });
   }, [state])
 
-  let mouseLeaveHandler = () => {};
+  const handleMouseOut = useCallback(() => {
+    setState({
+      ...state,
+      mouseX: 0,
+      mouseY: 0
+    })
+  }, [state]);
 
   const {transform: charStyle} = characterStyle();
   const {transform: bgStyle} = backgroundStyle();
 
   return (
-      <div
-          className={bem()}
-          ref={ref}
-          onMouseEnter={mouseEnterHandler}
-          onMouseMove={mouseMoveHandler}
-          onMouseLeave={mouseLeaveHandler}
-      >
         <div
-            className="card"
-            style={cardStyle()}
+            className={bem()}
+            ref={ref}
+            onMouseMove={(e) => mouseMoveHandler(e)}
+            onMouseOut={handleMouseOut}
         >
-          <div className="card-content">
-            <div
-                className="parallax-bg"
-                style={{
-                  transform: bgStyle,
-                  backgroundImage: `url(${character && character.bgUrl})`
-                }}
-            />
-            <div
-                className="character-bg parallax-bg"
-                style={{
-                  transform: charStyle,
-                  backgroundImage: `url(${character && character.url})`
-                }}
-            />
+          <div
+              className={bem("card")}
+              style={cardStyle()}
+          >
+            <div className={bem('content')}>
+              <div
+                  className={bem("parallax-bg")}
+                  style={{
+                    transform: bgStyle,
+                    backgroundImage: `url(${character && character.bgUrl})`
+                  }}
+              />
+              <div
+                  className={bem("parallax-bg", ['inner-image'])}
+                  style={{
+                    transform: charStyle,
+                    backgroundImage: `url(${character && character.url})`
+                  }}
+              />
 
-            <div className="card-detail">
-              <h4>{character && character.name}</h4>
-              <p>{character && character.description}</p>
+              <div className={bem("details")}>
+                <h4>{character && character.name}</h4>
+                <p>{character && character.description}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
   );
 }
 

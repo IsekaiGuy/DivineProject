@@ -1,5 +1,8 @@
 .MainScreen {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__card-list {
     display: flex;
