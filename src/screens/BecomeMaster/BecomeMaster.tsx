@@ -64,8 +64,8 @@ const BecomeMaster = () => {
       </div>
 
       <Buttons
-          value1="Read FAQ"
-          value2="Master's registration"
+          fillBtnText="Read FAQ"
+          raiseBtnText="Master's registration"
       />
     </section>
   );

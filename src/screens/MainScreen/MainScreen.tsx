@@ -21,8 +21,8 @@ const MainScreen = () => {
             </div>
             <Buttons
                 className={bem('buttons')}
-                value1="Sign up"
-                value2="Become a Master"
+                fillBtnText="Sign up"
+                raiseBtnText="Become a Master"
             />
         </section>
     )

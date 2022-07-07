@@ -1,4 +1,5 @@
 import React from "react";
+
 import './Buttons.scss';
 
 export interface IButton {
@@ -6,22 +7,27 @@ export interface IButton {
 }
 
 export const FillBtn = ({value}: IButton) => (
-  <button className="fill">{value}</button>
+  <button className="fill">
+      {value}
+  </button>
 );
+
 export const RaiseBtn = ({value}: IButton) => (
-  <button className="raise">{value}</button>
+  <button className="raise">
+      {value}
+  </button>
 );
 
 interface IButtons {
     className?: string,
-    value1: string,
-    value2: string
+    fillBtnText: string,
+    raiseBtnText: string
 }
 
 const Buttons = (props: IButtons) => (
     <div className={`buttons ${props.className}`}>
-        <FillBtn value={props.value1}/>
-        <RaiseBtn value={props.value2}/>
+        <FillBtn value={props.fillBtnText}/>
+        <RaiseBtn value={props.raiseBtnText}/>
     </div>
 )
 export default Buttons;
