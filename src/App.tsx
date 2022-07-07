@@ -1,7 +1,7 @@
 import React from 'react';
-import BecomeMaster from "./components/BecomeMaster/BecomeMaster";
-import FaqsContainer from "./components/Faq/Faq";
-import Footer from "./components/Footer/Footer";
+import BecomeMaster from "./screens/BecomeMaster/BecomeMaster";
+import FaqsContainer from "./screens/Faq/Faq";
+import Footer from "./screens/Footer/Footer";
 import MainScreen from "./screens/MainScreen/MainScreen";
 import BackgroundParticles from "./components/BackgroundParticles/BackgroundParticles";
 // @ts-ignore

@@ -1,0 +1,58 @@
+@import '../../style/placeholders';
+@import '../../style/animations';
+
+.BecomeMaster {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5vh;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__content {
+    padding: .2rem 2rem;
+    font-size: 1.7rem;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px purple;
+    position: relative;
+    display: block;
+    z-index: 90;
+    margin: 2rem 0;
+
+    &_animation1 {
+      animation: text-block-gradient 10s ease infinite;
+
+      @extend %placeholder-text-blocks-gradient;
+    }
+
+    &_animation2 {
+      animation: text-block-gradient 10s ease infinite;
+      animation-delay: 0.5s;
+
+      @extend %placeholder-text-blocks-gradient;
+    }
+
+    &_animation3 {
+      animation: text-block-gradient 10s ease infinite;
+      animation-delay: 1s;
+
+      @extend %placeholder-text-blocks-gradient;
+    }
+  }
+}
+
+@keyframes text-block-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

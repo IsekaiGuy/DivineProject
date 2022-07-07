@@ -1,8 +1,13 @@
 .MainScreen {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 5vh;
+
+  &__buttons {
+    padding-bottom: 5vh;
+  }
 
   &__card-list {
     display: flex;
@@ -11,9 +16,5 @@
     justify-content: space-between;
     animation: MoveUpDown 10s linear infinite;
     z-index: 2;
-  }
-
-  &__buttons {
-    margin-bottom: 30px;
   }
 }

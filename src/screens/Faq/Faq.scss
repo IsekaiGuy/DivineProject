@@ -1,10 +1,9 @@
 .Faq {
   &__container {
     color: white;
-  }
-
-  &__heading-container {
-    text-align: center;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
   }
 
   &__list {
@@ -20,6 +19,12 @@
     border: 3px solid grey;
     padding: 20px;
     margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  &__title {
+    align-self: center;
+    margin-bottom: 5vh;
   }
 }
 

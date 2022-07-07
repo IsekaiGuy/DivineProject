@@ -1,6 +1,7 @@
 import React from "react";
 // @ts-ignore
 import bemClassName from 'bem-classnames-maker';
+
 import './Faq.scss';
 
 const faqArray = [
@@ -30,11 +31,9 @@ const FaqsContainer = () => {
   const bem = bemClassName('Faq')
   return (
     <section className={bem('container')}>
-      <div className={bem('heading-wrapper')}>
-        <h3>
+        <h2 className={bem('title')}>
           Frequently Asked Questions
-        </h3>
-      </div>
+        </h2>
       <div className={bem('list')}>
         {faqArray.map((qanda, index) => (
           <details

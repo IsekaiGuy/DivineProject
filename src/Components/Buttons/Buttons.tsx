@@ -13,7 +13,7 @@ export const RaiseBtn = ({value}: IButton) => (
 );
 
 interface IButtons {
-    className: string,
+    className?: string,
     value1: string,
     value2: string
 }

@@ -9,6 +9,9 @@ const Nav = () => {
     const bem = bemClassName('Nav')
     return (<nav className={bem()}>
         <img src={image} alt="logo"/>
+        <h1>
+            Divination Market
+        </h1>
         <p>Sign In</p>
     </nav>)
 }
